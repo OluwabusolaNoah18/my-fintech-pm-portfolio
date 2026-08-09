@@ -36,8 +36,8 @@ const SkillsSection = () => {
           <div className="md:col-span-4">
             <p className="editorial-eyebrow mb-6">Toolkit</p>
             <h2 className="font-serif text-4xl md:text-5xl leading-[1.05]">
-              The craft,<br />
-              <span className="italic text-primary">stack by stack.</span>
+              What I actually<br />
+              <span className="italic text-primary">reach for.</span>
             </h2>
           </div>
           <div className="md:col-span-8">
