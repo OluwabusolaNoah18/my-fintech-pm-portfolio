@@ -31,8 +31,8 @@ const HeroSection = () => {
             className="md:col-span-8"
           >
             <h2 className="font-serif text-3xl md:text-5xl leading-[1.08] mb-10 max-w-3xl">
-              I build at the intersection of{" "}
-              <span className="text-accent italic">technical rigor</span> and user intuition turning ambiguous problems into shipped, live infrastructure.
+              I used to study cells under a microscope.{" "}
+              <span className="text-accent italic">Now I study how money moves</span> and build the products that move it.
             </h2>
 
             <div className="flex flex-wrap gap-10">
