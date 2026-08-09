@@ -19,8 +19,8 @@ const ProjectsSection = () => {
         >
           <p className="editorial-eyebrow mb-6">Selected Case Studies</p>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.05] max-w-3xl">
-            Product wins,<br />
-            <span className="italic text-primary">from gap to live.</span>
+            A closer look at<br />
+            <span className="italic text-primary">projects I've brought to life.</span>
           </h2>
         </motion.div>
 
