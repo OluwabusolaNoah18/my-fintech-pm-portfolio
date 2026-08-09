@@ -12,6 +12,8 @@ const experiences = [
     period: "Feb 2025 – Present",
     location: "Lagos, Nigeria",
     current: true,
+    accent: "#c9a84c",
+    hook: "Where I learned to ship payment infrastructure that has to work the first time.",
   },
   {
     company: "Filton Avenue",
@@ -19,6 +21,8 @@ const experiences = [
     type: "Contract · 1-month fixed-scope",
     period: "May 2026 – Jun 2026",
     location: "United Kingdom",
+    accent: "#7ea8a3",
+    hook: "One month, solo ownership, straight to the CEO.",
   },
   {
     company: "MyPropifyNG",
@@ -26,6 +30,8 @@ const experiences = [
     type: "Contract",
     period: "Sep 2025 – May 2026",
     location: "Lagos, Nigeria",
+    accent: "#c07a68",
+    hook: "Took a product from a blank page to production.",
   },
   {
     company: "BeTechified",
@@ -33,6 +39,8 @@ const experiences = [
     type: "Volunteer",
     period: "Apr 2025 – Oct 2025",
     location: "Lagos, Nigeria",
+    accent: "#8a7fb8",
+    hook: "Turned my own early mistakes into lessons for 1,000+ mentees.",
   },
   {
     company: "iTCloser",
@@ -40,6 +48,8 @@ const experiences = [
     type: "Contract · 3 months",
     period: "Dec 2024 – Feb 2026",
     location: "Remote",
+    accent: "#6f9bd1",
+    hook: "Where I first ran structured A/B tests to settle design debates with data.",
   },
   {
     company: "Young People in Tech (YPIT)",
@@ -47,6 +57,8 @@ const experiences = [
     type: "Volunteer",
     period: "Oct 2025 – Present",
     location: "Remote",
+    accent: "#7a9d54",
+    hook: "Traded PRDs for ticketing spreadsheets and a hackathon run-sheet.",
   },
 ];
 
@@ -84,8 +96,13 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.05 * i }}
-              className="group bg-background p-7 md:p-8 flex flex-col hover:bg-card/60 transition-colors"
+              className="group relative bg-background p-7 md:p-8 flex flex-col hover:bg-card/60 transition-colors overflow-hidden"
             >
+              <span
+                className="absolute top-0 left-0 right-0 h-[3px]"
+                style={{ background: exp.accent }}
+              />
+
               <div className="flex items-center justify-between mb-5">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
                   {exp.period}
@@ -100,7 +117,10 @@ const ExperienceSection = () => {
               <h3 className="font-serif text-2xl md:text-[1.75rem] leading-tight group-hover:text-primary transition-colors mb-1.5">
                 {exp.company}
               </h3>
-              <p className="text-primary text-sm italic font-serif mb-5">{exp.role}</p>
+              <p className="text-primary text-sm italic font-serif mb-4">{exp.role}</p>
+              <p className="text-xs leading-relaxed mb-5" style={{ color: exp.accent }}>
+                {exp.hook}
+              </p>
 
               <div className="mt-auto flex flex-wrap gap-2 pt-4 border-t border-border/60">
                 <span className="text-[10px] uppercase tracking-[0.2em] border border-border px-2.5 py-1 text-muted-foreground">
