@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Download } from "lucide-react";
 
-const CV_URL = "https://drive.google.com/file/d/1ocDuxu-2kcxNvZtrjkEhbGY_iHiuR01E/view?usp=drive_link";
+const CV_URL = "https://drive.google.com/file/d/1n-zSivRDoh9bTf2yBeR4TpGJuzrqbtXZ/view";
 
 const HeroSection = () => {
   return (
