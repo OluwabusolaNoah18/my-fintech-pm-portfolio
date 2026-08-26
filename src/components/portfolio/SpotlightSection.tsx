@@ -1,41 +1,24 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { ArrowRight, Mail, Download } from "lucide-react";
 
 const CV_URL = "https://drive.google.com/file/d/1ocDuxu-2kcxNvZtrjkEhbGY_iHiuR01E/view?usp=drive_link";
 
-const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-16 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto w-full">
-        {/* Header row */}
-        <motion.header
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row md:items-end justify-between border-b border-border pb-10 md:pb-14 mb-16 md:mb-20 gap-8"
-        >
-          <div className="space-y-5 max-w-3xl">
-            <p className="editorial-eyebrow">Product Portfolio · 2026</p>
-            <h1 className="font-serif italic leading-[0.9] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-primary">
-              Product Manager
-            </h1>
-          </div>
-        </motion.header>
+const SpotlightSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-        {/* Body grid */}
+  return (
+    <section className="section-padding pt-0" ref={ref}>
+      <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
             className="md:col-span-8"
           >
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.08] mb-10 max-w-3xl">
-              I used to study cells under a microscope.{" "}
-              <span className="text-accent italic">Now I study how money moves</span> and build the products that move it.
-            </h2>
-
-            <div className="flex flex-wrap gap-10">
+            <div className="flex flex-wrap gap-10 mb-12">
               {[
                 { v: "32.5%", l: "Merchant Base Growth" },
                 { v: "40%", l: "Blocker Reduction / Sprint" },
@@ -48,7 +31,7 @@ const HeroSection = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-12">
+            <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                 className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-accent transition-colors"
@@ -73,11 +56,10 @@ const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Spotlight card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="md:col-span-4"
           >
             <div className="bg-card border border-border/70 p-8 h-full flex flex-col justify-between">
@@ -100,24 +82,9 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Skills strip */}
-        <div className="mt-24 md:mt-32 pt-10 border-t border-border flex flex-wrap gap-x-10 gap-y-4">
-          {[
-            "Payment Gateways",
-            "Embedded Finance",
-            "API-first Products",
-            "Certified Scrum Master",
-            "UAT & Regression",
-          ].map((s) => (
-            <span key={s} className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              {s}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
 };
 
-export default HeroSection;
+export default SpotlightSection;

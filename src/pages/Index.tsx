@@ -1,6 +1,7 @@
 import Navbar from "@/components/portfolio/Navbar";
 import HeroSection from "@/components/portfolio/HeroSection";
 import AboutSection from "@/components/portfolio/AboutSection";
+import SpotlightSection from "@/components/portfolio/SpotlightSection";
 import ApproachSection from "@/components/portfolio/ApproachSection";
 import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ExperienceSection from "@/components/portfolio/ExperienceSection";
